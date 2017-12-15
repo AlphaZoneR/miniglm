@@ -392,10 +392,25 @@ PyObject * GLMVec3_tp_get_tup(GLMVec3 * self, void * closure) {
 	return GLMVec3_Tuple(self);
 }
 
+PyObject * GLMVec3_tp_get_x(GLMVec3 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.x);
+}
+
+PyObject * GLMVec3_tp_get_y(GLMVec3 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.y);
+}
+
+PyObject * GLMVec3_tp_get_z(GLMVec3 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.z);
+}
+
 PyGetSetDef GLMVec3_tp_getseters[] = {
 	{(char *)"length", (getter)GLMVec3_tp_get_length, 0, 0, 0},
 	{(char *)"normal", (getter)GLMVec3_tp_get_normal, 0, 0, 0},
 	{(char *)"tup", (getter)GLMVec3_tp_get_tup, 0, 0, 0},
+	{(char *)"x", (getter)GLMVec3_tp_get_x, 0, 0, 0},
+	{(char *)"y", (getter)GLMVec3_tp_get_y, 0, 0, 0},
+	{(char *)"z", (getter)GLMVec3_tp_get_z, 0, 0, 0},
 	{0},
 };
 
