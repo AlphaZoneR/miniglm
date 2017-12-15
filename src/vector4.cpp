@@ -369,10 +369,34 @@ PyObject * GLMVec4_tp_get_tup(GLMVec4 * self, void * closure) {
 	return GLMVec4_Tuple(self);
 }
 
+PyObject * GLMVec4_tp_get_tup(GLMVec4 * self, void * closure) {
+	return GLMVec4_Tuple(self);
+}
+
+PyObject * GLMVec4_tp_get_x(GLMVec4 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.x);
+}
+
+PyObject * GLMVec4_tp_get_y(GLMVec4 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.y);
+}
+
+PyObject * GLMVec4_tp_get_z(GLMVec4 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.z);
+}
+
+PyObject * GLMVec4_tp_get_w(GLMVec4 * self, void * closure) {
+	return PyFloat_FromDouble(self->val.w);
+}
+
 PyGetSetDef GLMVec4_tp_getseters[] = {
 	{(char *)"length", (getter)GLMVec4_tp_get_length, 0, 0, 0},
 	{(char *)"normal", (getter)GLMVec4_tp_get_normal, 0, 0, 0},
 	{(char *)"tup", (getter)GLMVec4_tp_get_tup, 0, 0, 0},
+	{(char *)"x", (getter)GLMVec4_tp_get_x, 0, 0, 0},
+	{(char *)"y", (getter)GLMVec4_tp_get_y, 0, 0, 0},
+	{(char *)"z", (getter)GLMVec4_tp_get_z, 0, 0, 0},
+	{(char *)"w", (getter)GLMVec4_tp_get_w, 0, 0, 0},
 	{0},
 };
 
